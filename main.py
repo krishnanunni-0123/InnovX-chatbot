@@ -13,7 +13,7 @@ def log_conversation(user_text, bot_text):
         time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         file.write(f"\n[{time}]\n")
         file.write(f"User: {user_text}\n")
-        file.write(f"Jarvis: {bot_text}\n")
+        file.write(f"InnovX: {bot_text}\n")
 
 def listen():
     recognizer = sr.Recognizer()
@@ -43,7 +43,7 @@ def get_response(user_input):
         return f"Today's date is {datetime.now().strftime('%d %B %Y')}"
 
     elif "your name" in user_input:
-        return "I am Jarvis, your AI assistant."
+        return "I am InnovX, your AI assistant."
 
     elif "bye" in user_input:
         return "Goodbye! Have a nice day."
@@ -51,7 +51,7 @@ def get_response(user_input):
     else:
         return "I am still learning. Please try another question."
 
-print("=== JARVIS CHATBOT ===")
+print("=== InnovX CHATBOT ===")
 
 while True:
     mode = input("\nType T for text or V for voice: ").lower()
@@ -68,7 +68,7 @@ while True:
 
     response = get_response(user_text)
 
-    print("Jarvis:", response)
+    print("InnovX:", response)
     speak(response)
 
     log_conversation(user_text, response)
